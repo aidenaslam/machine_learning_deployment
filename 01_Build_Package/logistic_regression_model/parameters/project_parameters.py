@@ -1,10 +1,5 @@
 import os
 
-import logistic_regression_model
-from pathlib import Path
-
-PACKAGE_ROOT = Path(logistic_regression_model.__file__).resolve().parent # for Version file Heroku
-
 # Define global font for EDA
 font = {"family": "calibri", "weight": "normal", "size": 18}
 
