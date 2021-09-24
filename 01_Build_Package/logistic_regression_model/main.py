@@ -2,7 +2,6 @@ import time
 
 from modelling_evaluation.modelling import model_eval
 
-
 if __name__ == "__main__":
     start = time.time()
 

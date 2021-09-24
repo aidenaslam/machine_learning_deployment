@@ -1,5 +1,4 @@
-from logistic_regression_model.parameters.project_parameters import  PACKAGE_ROOT 
-
+from logistic_regression_model.parameters.project_parameters import project_path
 
 # It is strongly advised that you do not add any handlers other than
 # NullHandler to your library’s loggers. This is because the configuration
@@ -11,5 +10,5 @@ from logistic_regression_model.parameters.project_parameters import  PACKAGE_ROO
 # https://docs.python.org/3/howto/logging.html#configuring-logging-for-a-library
 
 
-with open(PACKAGE_ROOT / "VERSION") as version_file:
+with open(project_path / "VERSION") as version_file:
     __version__ = version_file.read().strip()

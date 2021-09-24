@@ -1,4 +1,4 @@
-import os
+# import os
 
 import pandas as pd
 from data_prep.data_processing import data_processing, rename_class, split_dataset
@@ -39,5 +39,8 @@ def model_eval():
     # Save model to saved_models folder
     print("Saving model")
     pkl_filename = "final_model.joblib"
-    with open(os.path.join(save_models, pkl_filename), "wb") as file:
+    with open(save_models / pkl_filename, "wb") as file:
         dump(log_reg, file)
+
+    # with open(os.path.join(save_models, pkl_filename), "wb") as file:
+    #   dump(log_reg, file)
