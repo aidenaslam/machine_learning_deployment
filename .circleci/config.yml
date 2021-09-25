@@ -62,7 +62,10 @@ jobs:
 tags_only: &tags_only
   filters:
     branches:
-      ignore: /.*/
+      only:
+        - master
+        - development
+        - dev_aiden
     tags:
       only: /^.*/
 
