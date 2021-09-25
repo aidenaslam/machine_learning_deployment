@@ -59,31 +59,6 @@ jobs:
           command: |
             tox -e publish_model
 
-
-  train_and_upload_regression_model:
-    <<: *defaults
-    steps:
-      - checkout
-      - *prepare_venv
-      - run: 
-          name: Install requirements
-          command: |
-            . venv/bin/activate
-            pip install -r packages/logistic_regression_model/requirements.txt
-      - run: 
-          name: Train model
-          command: |
-            . venv/bin/activate
-            PYTHONPATH=./packages/logistic_regression_model python3 packages/logistic_regression_model/logistic_regression_model/main.py
-      - run: 
-          name: Publish model to Gemfury
-          command: |
-            . venv/bin/activate
-            chmod +x ./scripts/publish_model.sh
-            ./scripts/publish_model.sh ./packages/logistic_regression_model/
-
-  
-
 tags_only: &tags_only
   filters:
     branches:
