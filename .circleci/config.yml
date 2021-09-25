@@ -70,7 +70,6 @@ jobs:
           command: |
             . venv/bin/activate
             pip install -r packages/logistic_regression_model/requirements.txt
-      - *fetch_data
       - run: 
           name: Train model
           command: |
