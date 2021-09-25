@@ -8,10 +8,6 @@ class PredictionResults(BaseModel):
     errors: Optional[Any]
     predictions: Optional[List[str]]
 
-
-#class HeadlinesInputSchema(BaseModel):
-    #Headline: Optional[Any]
-
 class MultipleHeadlinesInputs(BaseModel):
     inputs: List[HeadlinesInputSchema]
 
@@ -23,6 +19,5 @@ class MultipleHeadlinesInputs(BaseModel):
                         "Headline": "Barcelona will not win la liga this year"                        
                     } 
                     ]
-                
             }
         }
