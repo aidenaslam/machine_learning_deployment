@@ -1,13 +1,12 @@
 import json
 from typing import Any
 
-#import numpy as np
 import pandas as pd
 from fastapi import APIRouter, HTTPException
 from fastapi.encoders import jsonable_encoder
-from loguru import logger
 from logistic_regression_model import __version__ as model_version
 from logistic_regression_model.modelling_evaluation.predict import make_prediction
+from loguru import logger
 
 from app import __version__, schemas
 from app.config import settings
@@ -32,9 +31,7 @@ async def predict(input_data: schemas.MultipleHeadlinesInputs) -> Any:
     """
     Make house price predictions with the TID regression model
     """
-
-    input_df = pd.DataFrame(jsonable_encoder(input_data.inputs), columns ={"Headline"})
-
+    input_df = pd.DataFrame(jsonable_encoder(input_data.inputs), columns={"Headline"})
     # Advanced: You can improve performance of your API by rewriting the
     # `make prediction` function to be async and using await here.
     logger.info(f"Making prediction on inputs: {input_data.inputs}")
